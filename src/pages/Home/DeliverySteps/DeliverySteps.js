@@ -6,7 +6,7 @@ import icon4 from "../../../Images/deliver/customer.png";
 
 const DeliverySteps = () => {
   return (
-    <div className="my-5">
+    <div className="my-8">
       <div class="">
         <div class="text-center">
           <div class="">
