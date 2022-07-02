@@ -5,7 +5,7 @@ import fizz3 from "../../../Images/heroimg/5.png";
 
 const Features = () => {
   return (
-    <div className="my-8 grid md:grid-cols-3 ">
+    <div className="my-16 grid md:grid-cols-3 ">
       <div class="card card-side shadow-xl p-4 m-5 bg-yellow-200">
         <figure>
           <img className="w-40 h-40" src={fizz1} alt="Movie" />
