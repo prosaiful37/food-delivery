@@ -1,0 +1,31 @@
+[
+    {
+        "name" : "John Doe",
+        "title" : "Food Specialist",
+        "img" : "https://i.ibb.co/pdGm2YF/1.jpg",
+        "quotes" : "https://i.ibb.co/QNVbJRg/left-quote.png",
+        "discription" : "Having good restaurant reviews is crucial these days. It is not just making our decision to pick one easier, it is also helping the restaurant be more successful."
+    },
+    {
+        "name" : "Justine Donawick",
+        "title" : "Food Specialist",
+        "img" : "https://i.ibb.co/7Gq2D2n/2.jpg",
+        "quotes" : "https://i.ibb.co/QNVbJRg/left-quote.png",
+        "discription" : "Having good restaurant reviews is crucial these days. It is not just making our decision to pick one easier, it is also helping the restaurant be more successful."
+    }, 
+    {
+        "name" : "Heather Madlin",
+        "title" : "Food Specialist",
+        "img" : "https://i.ibb.co/jD4PZdX/3.jpg",
+        "quotes" : "https://i.ibb.co/QNVbJRg/left-quote.png",
+        "discription" : "Having good restaurant reviews is crucial these days. It is not just making our decision to pick one easier, it is also helping the restaurant be more successful."
+    }, 
+    {
+        "name" : "Tina Flinston",
+        "title" : "Food Specialist",
+        "img" : "https://i.ibb.co/BzY6gq0/4.jpg",
+        "quotes" : "https://i.ibb.co/QNVbJRg/left-quote.png",
+        "discription" : "Having good restaurant reviews is crucial these days. It is not just making our decision to pick one easier, it is also helping the restaurant be more successful."
+    }
+
+]
