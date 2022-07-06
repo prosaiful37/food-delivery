@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FoodProduct from "./FoodProduct";
 
 const FoodsProducts = () => {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     fetch("Foods.json")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+
+    // click to menu page
+    const navigateToMenu = () => {
+      navigate("/menu");
+    };
   return (
     <div class="hero my-12 ">
       <div class="hero-content text-center">
@@ -23,8 +30,8 @@ const FoodsProducts = () => {
               <FoodProduct key={product.id} product={product}></FoodProduct>
             ))}
           </div>
-          <div className="flex-justify-end">
-            <button class="btn btn-active btn-link">More Products</button>
+          <div className="flex-justify-end mt-7">
+            <button onClick={navigateToMenu}  class="btn btn-active btn-link">More Products</button>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ const Banner = () => {
         <div class="hero-content text-center text-neutral-content">
           <div class="">
             <img className="w-100 mx-auto" src={banner1} alt="" />
-            <h1 class="mb-5 text-7xl font-bold text-white">
+            <h1 class="mb-5 md:text-7xl font-bold text-white">
               MODERNIZING THE <br /> TRADITIONAL ITALIAN PIZZA
             </h1>
             <p class="mb-5 font-sans">
