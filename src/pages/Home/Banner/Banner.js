@@ -1,9 +1,6 @@
 import React from "react";
-// import heor1 from "../../../Images/heroimg/1.png";
 import background from "../../../Images/heroimg/7.jpg";
 import banner1 from "../../../Images/heroimg/1 (1).png";
-// import banner3 from "../../../Images/heroimg/3.png";
-// import banner4 from "../../../Images/heroimg/12.png";
 
 const Banner = () => {
   return (
