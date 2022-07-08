@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import social1 from "../../../Images/social/google.png";
-import social2 from "../../../Images/social/facebook-app-symbol.png";
+import social2 from "../../../Images/social/facebook.png";
 
 const Login = () => {
   return (
@@ -42,10 +42,25 @@ const Login = () => {
                 <button class="btn btn-primary">Login</button>
               </div>
             </form>
-            <p className="text-center"><small>New pizza hank ? <Link className="text-primary" to="/signUp">Create New Account</Link> </small></p>
-              <div class="divider">OR</div>
-              <button  class="btn btn-outline btn-primary text-black"> <img className="w-5 mr-4" src={social1} alt="" /> Continue with Google </button>
-              <button  class="btn btn-outline btn-primary text-black"> <img className="w-5 mr-4" src={social2} alt="" /> Continue with facebook </button>
+            <p className="text-center">
+              <small>
+                New pizza hank ?{" "}
+                <Link className="text-primary" to="/register">
+                  Create New Account
+                </Link>{" "}
+              </small>
+            </p>
+            <div class="divider">OR</div>
+            <button class="btn btn-outline btn-primary text-black">
+              {" "}
+              <img className="w-5 mr-4" src={social1} alt="" /> Continue with
+              Google{" "}
+            </button>
+            <button class="btn btn-outline btn-primary text-black">
+              {" "}
+              <img className="w-5 mr-4" src={social2} alt="" /> Continue with
+              facebook{" "}
+            </button>
           </div>
         </div>
       </div>
