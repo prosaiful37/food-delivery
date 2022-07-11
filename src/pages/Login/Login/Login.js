@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import social1 from "../../../Images/social/google.png";
 import social2 from "../../../Images/social/facebook.png";
@@ -18,6 +18,8 @@ const Login = () => {
   ] = useSignInWithEmailAndPassword(auth);
 
   const navigate = useNavigate()
+  const location = useLocation()
+  
   let errormsg;
 
 
@@ -27,6 +29,9 @@ const Login = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+
+  
+  let from = location.state?.from?.pathname || "/";
 
   if (gerror || error ) {
     return errormsg = <p className="text-red"> <small>{error?.message || gerror?.message}</small> </p>
@@ -41,9 +46,9 @@ const Login = () => {
   }
 
 
-
   const onSubmit = async (data) => {
     await signInWithEmailAndPassword(data.email, data.password);
+    navigate(from, { replace: true });
   };
 
   return (
