@@ -6,7 +6,7 @@ const FoodsProducts = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("Foods.json")
+    fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -27,9 +27,14 @@ const FoodsProducts = () => {
           </p>
           <div className="grid md:grid-cols-3 gap-5 mt-5">
             {products.slice(0, 6).map((product) => (
-              <FoodProduct key={product.id} product={product}></FoodProduct>
+              <FoodProduct 
+                key={product.id} 
+                product={product}>
+
+              </FoodProduct>
             ))}
           </div>
+          {/* {order && <OrdersModal order={order}></OrdersModal>} */}
           <div className="flex-justify-end mt-7">
             <button onClick={navigateToMenu}  class="btn btn-active btn-link">More Products</button>
           </div>

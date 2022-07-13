@@ -1,8 +1,18 @@
 import { ShoppingCartIcon } from "@heroicons/react/solid";
+import { useNavigate } from 'react-router-dom';
 import React from "react";
 
 const Menus = ({ product }) => {
-  const { img, name, discription, price } = product;
+  const { _id ,img, name, discription, price } = product;
+  const navigate = useNavigate();
+  
+
+  const navigateToOrders = id =>{
+    navigate(`/orders/${id}`)
+  }
+
+
+
   return (
     <div>
       
@@ -46,7 +56,7 @@ const Menus = ({ product }) => {
           </p>
           <hr />
           <div class="card-actions mt-5">
-            <button class="btn btn-primary font-sans font-bold text-white">
+            <button onClick={() => navigateToOrders(_id)} class="btn btn-primary font-sans font-bold text-white">
               Order{" "}
               <ShoppingCartIcon className="h-5 w-auto ms-2"></ShoppingCartIcon>
             </button>
