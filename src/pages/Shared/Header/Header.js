@@ -46,16 +46,34 @@ const Header = () => {
               <Link to="/Menu">Menu</Link>
             </li>
             <li>
-              {
-                user?
+        {user ? (
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+              <div class="w-10 rounded-full">
+                <img src="https://api.lorem.space/image/face?hash=33791" />
+              </div>
+            </label>
+            <ul
+              tabindex="0"
+              class="menu menu-compact dropdown-content mt-40 p-2  bg-accent text-black rounded-box w-52"
+            >
+              <li>
+                <a className="justify-between">
+                  Profile
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li>
                 <button onClick={logout} class="btn btn-ghost">
                   Logout
                 </button>
-                :
-                <Link to="/login">Login</Link>
-              }
-               
-            </li>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
+      </li>
           </ul>
         </div>
         <Link to="/" class="btn btn-ghost normal-case text-xl">Slices Pizza</Link>
@@ -63,8 +81,11 @@ const Header = () => {
 
 
 
-      <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal p-0 font-sans font-bold">
+      <div class="navbar-center ">
+        
+      </div>
+      <div class="navbar-end hidden lg:flex">
+      <ul class="menu menu-horizontal p-0 font-sans font-bold">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -75,20 +96,35 @@ const Header = () => {
             <Link to="/Menu">Menu</Link>
           </li>
           <li>
-              {
-                user?
+        {user ? (
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+              <div class="w-10 rounded-full">
+                <img src="https://api.lorem.space/image/face?hash=33791" />
+              </div>
+            </label>
+            <ul
+              tabindex="0"
+              class="menu menu-compact dropdown-content mt-40 p-2 shadow bg-accent text-black rounded-box w-52"
+            >
+              <li>
+                <a className="justify-between">
+                  Profile
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li>
                 <button onClick={logout} class="btn btn-ghost">
                   Logout
                 </button>
-                :
-                <Link to="/login">Login</Link>
-              }
-               
-            </li>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
+      </li>
         </ul>
-      </div>
-      <div class="navbar-end">
-        <a class="btn">Get started</a>
       </div>
     </div>
   );
