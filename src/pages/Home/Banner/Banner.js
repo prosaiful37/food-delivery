@@ -1,8 +1,15 @@
 import React from "react";
 import background from "../../../Images/heroimg/7.jpg";
 import banner1 from "../../../Images/heroimg/1 (1).png";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
+  const navigate = useNavigate();
+
+   // click to menu page
+   const navigateToMenu = () => {
+    navigate("/menu");
+  };
   return (
     <div className=" ">
       <div
@@ -22,7 +29,7 @@ const Banner = () => {
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
-            <button class="btn btn-primary font-sans">View menu</button>
+            <button onClick={navigateToMenu} class="btn btn-primary font-sans">View menu</button>
           </div>
         </div>
         
