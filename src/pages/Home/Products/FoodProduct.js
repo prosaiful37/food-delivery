@@ -2,6 +2,7 @@ import { ShoppingCartIcon } from "@heroicons/react/solid";
 import { useNavigate } from 'react-router-dom';
 import React from "react";
 
+
 const FoodProduct = ({ product }) => {
   const {_id, img, name, discription, price } = product;
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const FoodProduct = ({ product }) => {
 
   return (
     <div class="card card-compact bg-base-100 shadow">
-      <figure>
+      <figure className="image-box">
         <img src={img} alt="Shoes" />
       </figure>
       <div class="card-body">

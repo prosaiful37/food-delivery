@@ -1,6 +1,7 @@
 import { ShoppingCartIcon } from "@heroicons/react/solid";
 import { useNavigate } from 'react-router-dom';
 import React from "react";
+import './Menu.css';
 
 const Menus = ({ product }) => {
   const { _id ,img, name, discription, price } = product;
@@ -16,9 +17,9 @@ const Menus = ({ product }) => {
   return (
     <div>
       
-      <div class="card card-compact bg-base-100 shadow-xl">
-        <figure>
-          <img src={img} alt="Shoes" />
+      <div class="card card-compact bg-accent shadow-xl">
+        <figure className="image-box">
+          <img className="d-block" src={img} alt="foods" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">{name}</h2>

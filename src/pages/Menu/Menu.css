@@ -1,0 +1,7 @@
+.image-box{
+    transition: .3s;
+}
+.image-box:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}

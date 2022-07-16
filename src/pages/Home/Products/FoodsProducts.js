@@ -11,10 +11,13 @@ const FoodsProducts = () => {
       .then((data) => setProducts(data));
   }, []);
 
+  
+
     // click to menu page
     const navigateToMenu = () => {
       navigate("/menu");
     };
+
   return (
     <div class="hero my-12 ">
       <div class="hero-content text-center">
