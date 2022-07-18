@@ -10,6 +10,9 @@ import Register from './pages/Login/Register/Register';
 import RequireAuth from './pages/Login/RequireAuth/RequireAuth';
 import Notfound from './pages/Notfound';
 import Orders from './Orders/Orders';
+import MyOrder from "./pages/Dashboard/Order/MyOrder";
+import Dashboard from './pages/Dashboard/Dashboard';
+import MyReview from './pages/Dashboard/MyReview/MyReview';
 
 function App() {
   return (
@@ -25,6 +28,16 @@ function App() {
               <Orders></Orders>
             </RequireAuth>
           }></Route>
+
+          <Route path='/dashboard' element={
+            <RequireAuth>
+              <Dashboard></Dashboard>
+            </RequireAuth>
+          }>
+            <Route index element={<MyOrder></MyOrder>}></Route>
+            <Route path='review' element={<MyReview></MyReview>}></Route>
+
+          </Route>
           
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/register' element={<Register></Register>}></Route>

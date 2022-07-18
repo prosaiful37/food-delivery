@@ -2,8 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import Swal from "sweetalert2";
+import auth from "../firebase.init";
+import Loading from "../pages/Shared/Loading/Loading";
+
+
 
 const Orders = () => {
+  const [user, loading, error] = useAuthState(auth );
   const { ordersId } = useParams();
 
   const [quentity, setQuentity] = useState(1);
@@ -29,6 +36,10 @@ const Orders = () => {
     }
   };
 
+  if(loading){
+    return <Loading></Loading>
+  }
+
   const handleOrder = (e) => {
     e.preventDefault();
 
@@ -37,6 +48,7 @@ const Orders = () => {
     const price = order.price;
     const discription = order.discription;
     const quentites = quentity;
+    const email = user.email;
 
     const orders = {
       img,
@@ -44,6 +56,7 @@ const Orders = () => {
       price,
       discription,
       quentites,
+      email
     };
 
     fetch("http://localhost:5000/orders/", {
@@ -73,6 +86,7 @@ const Orders = () => {
             </figure>
             <div class="card-body">
               <h2 class="card-title text-4xl">{order.name}</h2>
+              <p className="hidden">user email: {user.email}</p>
 
               <h4 className="text-2xl font-bold font-sans text-primary">
                 $ {order.price}
