@@ -2,6 +2,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
 import auth from "../../firebase.init";
+// import { EmojiHappyIcon, EmojiSadIcon } from '@heroicons/react/solid'
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
@@ -12,7 +13,7 @@ const Dashboard = () => {
         <h2 className="text-4xl font-bold text-secondary">
           Welcome To our Dashboard{" "}
           <span className="text-primary text-2xl font-sans ">
-            <small>Mr.{user.displayName} !</small>
+            <small> Mr.{user.displayName}  </small> 
           </span>{" "}
         </h2>
         {/* <!-- Page content here --> */}

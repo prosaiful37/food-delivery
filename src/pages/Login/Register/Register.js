@@ -8,6 +8,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from "react-fi
 import auth from "../../../firebase.init";
 import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import Loading from "../../Shared/Loading/Loading";
+import useToken from "../../../Hooks/useToken";
 
 const Register = () => {
   const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
@@ -19,7 +20,10 @@ const Register = () => {
   ] = useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, perror] = useUpdateProfile(auth);
 
+  const [token] = useToken(user || guser)
+
   const navigate = useNavigate()
+
   const {
     register,
     formState: { errors },
@@ -37,10 +41,8 @@ const Register = () => {
   if (loading || gloading) {
     return <Loading></Loading>;
   }
-  if (user || guser) {
-    return (
-      navigate('/')
-    );
+  if (token) {
+    navigate('/');
   }
 
 
@@ -48,6 +50,7 @@ const Register = () => {
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword( data.email, data.password);
     await updateProfile({ displayName: data.name });
+    console.log('update done');
 
     
   };

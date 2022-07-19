@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import social1 from "../../../Images/social/google.png";
@@ -6,7 +6,7 @@ import social2 from "../../../Images/social/facebook.png";
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
-
+import useToken from "../../../Hooks/useToken";
 
 const Login = () => {
   const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
@@ -30,8 +30,15 @@ const Login = () => {
     handleSubmit,
   } = useForm();
 
+  const [token] = useToken(user || guser)
   
   let from = location.state?.from?.pathname || "/";
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+    }
+
+  },[token, from, navigate])
 
   if (gerror || error ) {
     return errormsg = <p className="text-red"> <small>{error?.message || gerror?.message}</small> </p>
@@ -39,6 +46,8 @@ const Login = () => {
   if (loading || gloading) {
     return <Loading></Loading>;
   }
+
+   
   if (user || guser) {
     return (
       navigate('/')
@@ -48,7 +57,7 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     await signInWithEmailAndPassword(data.email, data.password);
-    navigate(from, { replace: true });
+    
   };
 
   return (

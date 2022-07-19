@@ -10,6 +10,7 @@ const Header = () => {
 
   const logout = () => {
     signOut(auth);
+    localStorage.removeItem('accessToken')
   };
 
   return (
@@ -104,12 +105,7 @@ const Header = () => {
             />
           </svg>
         </label>
-        {/* <label
-          for="dashboard-sidebar"
-          class="btn btn-primary drawer-button lg:hidden"
-        >
-          abc
-        </label> */}
+        
       </div>
 
       <div class="navbar-end hidden lg:flex">
