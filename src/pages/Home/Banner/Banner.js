@@ -13,10 +13,10 @@ const Banner = () => {
   return (
     <div className=" ">
       <div
-        class="hero min-h-screen bg-cover bg-center "
+        class="hero min-h-screen bg-cover bg-center"
         style={{ backgroundImage: `url(${background})` }}
       >
-        <div class="hero-overlay bg-opacity-50"></div>
+        <div class="hero-overlay bg-opacity-50 bg-secondary"></div>
         <div class="hero-content text-center text-neutral-content">
           <div class="">
             <img className="w-100 mx-auto" src={banner1} alt="" />

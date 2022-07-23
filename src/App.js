@@ -13,6 +13,7 @@ import Orders from './Orders/Orders';
 import MyOrder from "./pages/Dashboard/Order/MyOrder";
 import Dashboard from './pages/Dashboard/Dashboard';
 import MyReview from './pages/Dashboard/MyReview/MyReview';
+import Users from './pages/Dashboard/Users/Users';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             </RequireAuth>
           }></Route>
 
+          {/* nested route dashboard */}
           <Route path='/dashboard' element={
             <RequireAuth>
               <Dashboard></Dashboard>
@@ -36,6 +38,7 @@ function App() {
           }>
             <Route index element={<MyOrder></MyOrder>}></Route>
             <Route path='review' element={<MyReview></MyReview>}></Route>
+            <Route path='users' element={<Users></Users>}></Route>
 
           </Route>
           
