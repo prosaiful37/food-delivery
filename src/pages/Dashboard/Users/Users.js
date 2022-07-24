@@ -7,6 +7,7 @@ const Users = () => {
   const {
     isLoading,
     error,
+    refetch,
     data: users,
   } = useQuery(["users"], () =>
     fetch("http://localhost:5000/users", {
@@ -50,7 +51,7 @@ const Users = () => {
           </thead>
           <tbody>
             {users.map((user, index) => (
-              <UserRow user={user} index={index} key={user.id}></UserRow>
+              <UserRow user={user} index={index} key={user.id} refetch={refetch}></UserRow>
             ))}
           </tbody>
         </table>

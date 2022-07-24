@@ -48,7 +48,7 @@ const Orders = () => {
     const price = order.price;
     const discription = order.discription;
     const quentites = quentity;
-    const email = user.email;
+    const userEmail = user.email;
 
     const orders = {
       img,
@@ -56,7 +56,7 @@ const Orders = () => {
       price,
       discription,
       quentites,
-      email
+      userEmail
     };
 
     fetch("http://localhost:5000/orders/", {
