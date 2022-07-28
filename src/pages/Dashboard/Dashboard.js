@@ -1,3 +1,4 @@
+import { ShoppingCartIcon, ThumbUpIcon, UserGroupIcon } from "@heroicons/react/solid";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
@@ -26,14 +27,18 @@ const Dashboard = () => {
       <div class="drawer-side ">
         <label for="dashboard-sidebar" class="drawer-overlay"></label>
         <ul class="menu p-4 overflow-y-auto w-80 bg-neutral text-white font-sans">
+          <li className="text-2xl mb-1 font-bold">
+            Slice pizza
+          </li>
+          <hr />
           {/* <!-- Sidebar content here --> */}
-          <li className="mb-1">
-            <Link to="/dashboard">Orders</Link>
+          <li className="mb-1 mt-3">
+            <Link to="/dashboard"> <span> <ShoppingCartIcon className="h-5 w-auto ms-2"></ShoppingCartIcon> </span> Orders</Link>
           </li>
           <li className="mb-1">
-            <Link to="/dashboard/review">Reviews</Link>
+            <Link to="/dashboard/review"><span> <ThumbUpIcon className="h-5 w-auto ms-2"></ThumbUpIcon> </span> Reviews</Link>
           </li>
-          { admin && <li className="mb-1"><Link to="/dashboard/users">All Users</Link></li>}
+          { admin && <li className="mb-1"><Link to="/dashboard/users"><span> <UserGroupIcon className="h-5 w-auto ms-2"></UserGroupIcon> </span> All Users</Link></li>}
         </ul>
       </div>
     </div>

@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAuthState } from 'react-firebase-hooks/auth';
-import Swal from "sweetalert2";
 import auth from "../firebase.init";
 import Loading from "../pages/Shared/Loading/Loading";
 
@@ -69,7 +68,7 @@ const Orders = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          toast("Your Order Added successfull");
+          toast.success("Your Order Added successfull");
         }
 
         setOrder(data);

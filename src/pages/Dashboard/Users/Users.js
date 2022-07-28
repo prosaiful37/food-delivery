@@ -24,17 +24,6 @@ const Users = () => {
 
   if (error) return "An error has occurred: " + error.message;
 
-  // const [users, setUsers] = useState([]);
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/users", {
-  //     method: "GET",
-  //     headers: {
-  //       'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
-  //     }
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => setUsers(data));
-  // }, []);
 
   return (
     <div>
