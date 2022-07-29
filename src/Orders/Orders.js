@@ -2,20 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
 import Loading from "../pages/Shared/Loading/Loading";
 
-
-
 const Orders = () => {
-  const [user, loading, error] = useAuthState(auth );
+  const [user, loading, error] = useAuthState(auth);
   const { ordersId } = useParams();
 
   const [quentity, setQuentity] = useState(1);
   const [order, setOrder] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/products/${ordersId}`;
+    const url = `https://limitless-mountain-39246.herokuapp.com/products/${ordersId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrder(data));
@@ -35,8 +33,8 @@ const Orders = () => {
     }
   };
 
-  if(loading){
-    return <Loading></Loading>
+  if (loading) {
+    return <Loading></Loading>;
   }
 
   const handleOrder = (e) => {
@@ -55,10 +53,10 @@ const Orders = () => {
       price,
       discription,
       quentites,
-      userEmail
+      userEmail,
     };
 
-    fetch("http://localhost:5000/orders/", {
+    fetch("https://limitless-mountain-39246.herokuapp.com/orders/", {
       method: "POST",
       headers: {
         "content-type": "application/json",

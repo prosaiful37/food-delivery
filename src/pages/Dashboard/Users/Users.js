@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import UserRow from "./UserRow";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../../Shared/Loading/Loading";
@@ -10,7 +9,7 @@ const Users = () => {
     refetch,
     data: users,
   } = useQuery(["users"], () =>
-    fetch("http://localhost:5000/users", {
+    fetch("https://limitless-mountain-39246.herokuapp.com/users", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -23,7 +22,6 @@ const Users = () => {
   }
 
   if (error) return "An error has occurred: " + error.message;
-
 
   return (
     <div>
@@ -40,7 +38,12 @@ const Users = () => {
           </thead>
           <tbody>
             {users.map((user, index) => (
-              <UserRow user={user} index={index} key={user.id} refetch={refetch}></UserRow>
+              <UserRow
+                user={user}
+                index={index}
+                key={user.id}
+                refetch={refetch}
+              ></UserRow>
             ))}
           </tbody>
         </table>

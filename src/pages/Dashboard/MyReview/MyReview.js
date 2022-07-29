@@ -3,47 +3,37 @@ import reviewImg from "../../../Images/reviews-image/review.jpg";
 import { toast } from "react-toastify";
 
 const MyReview = () => {
-
   const handleReviews = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const name = e.target.name.value;
     const title = e.target.title.value;
     const image = e.target.image_url.value;
     const description = e.target.description.value;
 
     const addReview = {
-      name, 
-      title, 
-      image, 
-      description
-    }
+      name,
+      title,
+      image,
+      description,
+    };
 
-
-    fetch('http://localhost:5000/reviews', {
-      method : "POST",
+    fetch("https://limitless-mountain-39246.herokuapp.com/reviews", {
+      method: "POST",
       headers: {
         "content-type": "application/json",
-
       },
-      body: JSON.stringify(addReview)
+      body: JSON.stringify(addReview),
     })
-    .then(res => res.json())
-    .then(data => {
-      if(data.success){
-        toast('Reviews added successfully')
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    })
-    
-
-  }
-
-
-
-
-
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          toast("Reviews added successfully");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
 
   return (
     <div className="my-10">
@@ -87,7 +77,11 @@ const MyReview = () => {
               <label class="label">
                 <span class="label-text">Description</span>
               </label>
-              <textarea name="description" class="textarea textarea-bordered" placeholder="message"></textarea>
+              <textarea
+                name="description"
+                class="textarea textarea-bordered"
+                placeholder="message"
+              ></textarea>
             </div>
             <div class="form-control mt-6">
               <button class="btn btn-primary font-sans">Add</button>
@@ -95,7 +89,7 @@ const MyReview = () => {
           </form>
         </div>
         <div>
-            <img src={reviewImg} alt="" />
+          <img src={reviewImg} alt="" />
         </div>
       </div>
     </div>

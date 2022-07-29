@@ -12,7 +12,7 @@ import menu8 from "../../Images/menuimage/8.jpg";
 const Menu = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://limitless-mountain-39246.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -63,7 +63,6 @@ const Menu = () => {
               <div class="w-24 mask mask-hexagon">
                 <img src={menu4} />
               </div>
-              
             </div>
             <h4 className="text-2xl text-white text-center">Pasta</h4>
           </div>
@@ -103,7 +102,7 @@ const Menu = () => {
             <div className="grid md:grid-cols-3 gap-5 mt-5">
               {products.map((product) => (
                 <Menus key={product.id} product={product}></Menus>
-              ))}  
+              ))}
             </div>
           </div>
         </div>

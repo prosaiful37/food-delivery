@@ -15,16 +15,15 @@ const Dashboard = () => {
     <div class="drawer drawer-mobile">
       <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content p-3 bg-natural">
-        <h2 className="text-4xl font-bold text-secondary">
+        <h2 className="md:text-4xl font-bold text-secondary">
           Welcome To our Dashboard{" "}
           <span className="text-primary text-2xl font-sans ">
             <small> Mr.{user.displayName}  </small> 
           </span>{" "}
         </h2>
-        {/* <!-- Page content here --> */}
         <Outlet></Outlet>
       </div>
-      <div class="drawer-side ">
+      <div class="drawer-side">
         <label for="dashboard-sidebar" class="drawer-overlay"></label>
         <ul class="menu p-4 overflow-y-auto w-80 bg-neutral text-white font-sans">
           <li className="text-2xl mb-1 font-bold">

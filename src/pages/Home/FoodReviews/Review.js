@@ -4,7 +4,7 @@ import quotes from "../../../Images/reviews-image/left-quote.png";
 const Review = ({ review }) => {
   const { name, image, description, title } = review;
   return (
-    <div class="card card-compact w-96 bg-base-100 shadow-xl py-5">
+    <div class="card card-compact bg-base-100 shadow-xl py-5">
       <figure>
         <div class="avatar">
           <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">

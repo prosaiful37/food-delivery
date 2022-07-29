@@ -2,31 +2,33 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-import { signOut } from 'firebase/auth';
+import { signOut } from "firebase/auth";
 
 const UserOrder = () => {
   const [orders, setOrders] = useState([]);
   const [user] = useAuthState(auth);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/orders?userEmail=${user.email}`, {
-        method: 'GET',
-        headers: {
-            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+      fetch(
+        `https://limitless-mountain-39246.herokuapp.com/orders?userEmail=${user.email}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
         }
-    })
-        .then(res => {
-            if (res.status === 401 || res.status === 403) {
-                signOut(auth);
-                localStorage.removeItem('accessToken');
-                navigate('/');
-            }
-            return res.json()
+      )
+        .then((res) => {
+          if (res.status === 401 || res.status === 403) {
+            signOut(auth);
+            localStorage.removeItem("accessToken");
+            navigate("/");
+          }
+          return res.json();
         })
-        .then(data => {
-
+        .then((data) => {
           setOrders(data);
         });
     }
@@ -36,10 +38,10 @@ const UserOrder = () => {
     <div>
       <h2>My All Orders: {orders.length}</h2>
       <div class="overflow-x-auto">
-        <table class="table w-full mt-3">
+        <table class="table md:w-full mt-3">
           {/* <!-- head --> */}
           <thead>
-            <tr >
+            <tr>
               <th>SL/NO</th>
               <th>Foods-Name</th>
               <th>Picture</th>

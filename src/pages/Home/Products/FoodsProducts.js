@@ -6,17 +6,15 @@ const FoodsProducts = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://limitless-mountain-39246.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
 
-  
-
-    // click to menu page
-    const navigateToMenu = () => {
-      navigate("/menu");
-    };
+  // click to menu page
+  const navigateToMenu = () => {
+    navigate("/menu");
+  };
 
   return (
     <div class="hero my-12 ">
@@ -30,16 +28,14 @@ const FoodsProducts = () => {
           </p>
           <div className="grid md:grid-cols-3 gap-5 mt-5">
             {products.slice(0, 6).map((product) => (
-              <FoodProduct 
-                key={product.id} 
-                product={product}>
-
-              </FoodProduct>
+              <FoodProduct key={product.id} product={product}></FoodProduct>
             ))}
           </div>
           {/* {order && <OrdersModal order={order}></OrdersModal>} */}
           <div className="flex-justify-end mt-7">
-            <button onClick={navigateToMenu}  class="btn btn-active btn-link">More Products</button>
+            <button onClick={navigateToMenu} class="btn btn-active btn-link">
+              More Products
+            </button>
           </div>
         </div>
       </div>

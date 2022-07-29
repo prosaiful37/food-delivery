@@ -5,11 +5,10 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://limitless-mountain-39246.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
-
 
   return (
     <div class="hero py-5">
@@ -28,9 +27,7 @@ const Reviews = () => {
             ))}
           </div>
           <div className="flex justify-end">
-            <button class="btn btn-active btn-link">
-              More Reviews
-            </button>
+            <button class="btn btn-active btn-link">More Reviews</button>
           </div>
         </div>
       </div>

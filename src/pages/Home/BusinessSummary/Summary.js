@@ -6,12 +6,12 @@ import img1 from "../../../Images/subheader-2.jpg";
 const Summary = () => {
     return (
         <div
-         class="hero min-h-screen bg-scroll ..."
+         class="hero bg-scroll..."
         style={{
           background: `url(${img1})`,
         }}
       >
-        <div class="hero-overlay bg-opacity-90"></div>
+        <div class="hero-overlay bg-opacity-70 bg-secondary"></div>
         <div class="hero-content text-center text-neutral-content">
           <div class="hero-content text-center text-neutral-content">
             <div class="">
