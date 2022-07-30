@@ -13,6 +13,7 @@ import Orders from './Orders/Orders';
 import MyOrder from "./pages/Dashboard/Order/MyOrder";
 import Dashboard from './pages/Dashboard/Dashboard';
 import MyReview from './pages/Dashboard/MyReview/MyReview';
+import Payment from './pages/Dashboard/Payment';
 import Users from './pages/Dashboard/Users/Users';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -41,6 +42,7 @@ function App() {
           }>
             <Route index element={<MyOrder></MyOrder>}></Route>
             <Route path='review' element={<MyReview></MyReview>}></Route>
+            <Route path='payment/:id' element={<Payment></Payment>}></Route>
             <Route path='users' element={
             <RequireAdmin>
               <Users></Users>

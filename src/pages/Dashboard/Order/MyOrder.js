@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
 
@@ -46,7 +46,7 @@ const UserOrder = () => {
               <th>Foods-Name</th>
               <th>Picture</th>
               <th>Price</th>
-              <th>Quentity</th>
+              <th>Payments</th>
             </tr>
           </thead>
           <tbody>
@@ -59,7 +59,10 @@ const UserOrder = () => {
                   <img src={order.img} alt="" />{" "}
                 </td>
                 <td>$ {order.price}</td>
-                <td>{order.quentites}</td>
+                <td>
+                  { (order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}` }><button class="btn btn-success">Pay</button></Link> }
+                  { (order.price && order.paid) && <span class="text-success">Paid</span> }
+                  </td>
               </tr>
             ))}
           </tbody>
