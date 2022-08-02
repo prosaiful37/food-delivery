@@ -13,14 +13,17 @@ const CheckoutForm = ({ orders }) => {
   const { _id, price, userEmail, name } = orders;
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-      body: JSON.stringify({ price }),
-    })
+    fetch(
+      "https://limitless-mountain-39246.herokuapp.com/create-payment-intent",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify({ price }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data?.clientSecret) {
@@ -77,7 +80,7 @@ const CheckoutForm = ({ orders }) => {
         orders: _id,
         transctionId: paymentIntent.id,
       };
-      fetch(`http://localhost:5000/orders/${_id}`, {
+      fetch(`https://limitless-mountain-39246.herokuapp.com/orders/${_id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

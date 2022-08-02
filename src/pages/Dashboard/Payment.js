@@ -13,8 +13,12 @@ const stripePromise = loadStripe(
 const Payment = () => {
   const { id } = useParams();
 
-  const url = `http://localhost:5000/orders/${id}`;
-  const { data: orders, isLoading, error } = useQuery(["order", id], () =>
+  const url = `https://limitless-mountain-39246.herokuapp.com/orders/${id}`;
+  const {
+    data: orders,
+    isLoading,
+    error,
+  } = useQuery(["order", id], () =>
     fetch(url, {
       method: "GET",
       headers: {
@@ -27,7 +31,7 @@ const Payment = () => {
     return <Loading></Loading>;
   }
 
-  if (error) return 'An error has occurred: ' + error.message
+  if (error) return "An error has occurred: " + error.message;
 
   return (
     <div>
