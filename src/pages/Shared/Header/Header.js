@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
-import Logo from "../../../Images/Logo/logo-light.png";
+import Logo from "../../../Images/Logo/logo.png";
 import { signOut } from "firebase/auth";
 
 const Header = () => {
@@ -58,6 +58,7 @@ const Header = () => {
                   <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                     <div class="w-10 rounded-full">
                       <img src="https://api.lorem.space/image/face?hash=33791" />
+                      
                     </div>
                   </label>
                   <ul
@@ -83,8 +84,8 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <Link to="/" class="btn btn-ghost normal-case text-xl">
-          Slices Pizza
+        <Link to="/" class="">
+          <img src={Logo} alt="" />
         </Link>
       </div>
 
@@ -130,6 +131,7 @@ const Header = () => {
                 <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                   <div class="w-10 rounded-full">
                     <img src="https://api.lorem.space/image/face?hash=33791" />
+                   
                   </div>
                 </label>
 

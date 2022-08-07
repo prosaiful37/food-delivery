@@ -21,4 +21,7 @@ This project is [Create React and nodemongodb food delivery system ](https://sli
 
    <li>React toastify and react sweet alert use</li>
 
+   <li>Payment getway integrate</li>
+
+
    
