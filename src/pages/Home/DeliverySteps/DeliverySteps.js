@@ -15,8 +15,7 @@ const DeliverySteps = () => {
               We Deliver Your Food In 4 Steps
             </h2>
             <p class="py-6 font-sans">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda{" "}
-              <br />
+              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda <br />
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>

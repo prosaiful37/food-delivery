@@ -18,6 +18,7 @@ import Users from './pages/Dashboard/Users/Users';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RequireAdmin from './pages/Login/RequireAuth/RequireAdmin';
+import BackToTop from './pages/Shared/BackToTop/BackToTop';
 
 function App() {
   return (
@@ -55,8 +56,12 @@ function App() {
           <Route path='/register' element={<Register></Register>}></Route>
           <Route path='*' element={<Notfound></Notfound>}></Route>
         </Routes>
+        
+     
         <ToastContainer />
       <Footer></Footer>
+      
+      <BackToTop></BackToTop>
     </div>
   );
 }
