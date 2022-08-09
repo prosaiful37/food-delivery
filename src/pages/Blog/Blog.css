@@ -1,0 +1,12 @@
+.days{
+    --value:15;
+}
+.hours{
+    --value:10;
+}
+.minitue{
+    --value:24;
+}
+.second{
+    --value:12;
+}
