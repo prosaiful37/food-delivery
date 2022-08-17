@@ -52,8 +52,9 @@ const UserRow = ({ user, index, refetch }) => {
               Swal.fire("Deleted!", "Your user has deleted.", "success");
             }
           });
-          refetch();
+          
         }
+        refetch();
       });
   };
 

@@ -1,3 +1,4 @@
+import {  ArrowSmRightIcon } from "@heroicons/react/solid";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import FoodProduct from "./FoodProduct";
@@ -34,7 +35,7 @@ const FoodsProducts = () => {
           {/* {order && <OrdersModal order={order}></OrdersModal>} */}
           <div className="flex-justify-end mt-7">
             <button onClick={navigateToMenu} class="btn btn-active btn-link">
-              More Products
+              More Products <ArrowSmRightIcon className="h-5 w-auto ml-1"></ArrowSmRightIcon>
             </button>
           </div>
         </div>

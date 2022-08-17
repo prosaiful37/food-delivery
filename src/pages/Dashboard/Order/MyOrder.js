@@ -34,6 +34,25 @@ const UserOrder = () => {
     }
   }, [user]);
 
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are you sure?");
+    if (proceed) {
+      const url = `http://localhost:5000/orders/${id}`;
+      fetch(url, {
+        method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const remaning = orders.filter((order) => order._id !== id);
+          setOrders(remaning);
+        });
+    }
+  };
+
   return (
     <div>
       <h2>My All Orders: {orders.length}</h2>
@@ -46,6 +65,7 @@ const UserOrder = () => {
               <th>Foods-Name</th>
               <th>Picture</th>
               <th>Price</th>
+              <th>Cancel-item</th>
               <th>Payments</th>
             </tr>
           </thead>
@@ -60,9 +80,32 @@ const UserOrder = () => {
                 </td>
                 <td>$ {order.price}</td>
                 <td>
-                  { (order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}` }><button class="btn btn-success">Pay</button></Link> }
-                  { (order.price && order.paid) && <span class="text-success">Paid</span> }
-                  </td>
+                  {" "}
+                  <button
+                    onClick={() => handleDelete(order._id)}
+                    class="btn btn-sm"
+                  >
+                    Delete
+                  </button>
+                </td>
+                <td>
+                  {order.price && !order.paid && (
+                    <Link to={`/dashboard/payment/${order._id}`}>
+                      <button class="btn btn-success">Pay</button>
+                    </Link>
+                  )}
+                  {order.price && order.paid && (
+                    <div>
+                      <p>
+                        <span class="text-success">Paid</span>
+                      </p>
+                      <p>
+                        TransctionId:{" "}
+                        <span class="text-success">{order.transctionId}</span>
+                      </p>
+                    </div>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>
