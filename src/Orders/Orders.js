@@ -56,7 +56,7 @@ const Orders = () => {
       userEmail,
     };
 
-    fetch("http://localhost:5000/orders/", {
+    fetch("https://limitless-mountain-39246.herokuapp.com/orders/", {
       method: "POST",
       headers: {
         "content-type": "application/json",
