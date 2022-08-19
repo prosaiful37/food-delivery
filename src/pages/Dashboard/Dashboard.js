@@ -2,6 +2,7 @@ import {
   ShoppingCartIcon,
   ThumbUpIcon,
   UserGroupIcon,
+  SupportIcon
 } from "@heroicons/react/solid";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -43,9 +44,9 @@ const Dashboard = () => {
                   </div>
                 </div>
               </figure>
-              <div class="card-body text-center p-0">
-                <h2 class="card-title">{user.displayName}</h2>
-                <p>{user.email}</p>
+              <div class="card-body text-center p-0 items-center">
+                <h2 class="card-title text-secondary">{user.displayName}</h2>
+                <p className="text-secondary">{user.email}</p>
               </div>
             </div>
           </li>
@@ -55,9 +56,19 @@ const Dashboard = () => {
               {" "}
               <span>
                 {" "}
+                <SupportIcon className="h-5 w-auto ms-2"></SupportIcon>{" "}
+              </span>{" "}
+              Dashboard
+            </Link>
+          </li>
+          <li className="mb-1 mt-3">
+            <Link to="/dashboard/myorder">
+              {" "}
+              <span>
+                {" "}
                 <ShoppingCartIcon className="h-5 w-auto ms-2"></ShoppingCartIcon>{" "}
               </span>{" "}
-              Orders
+              My Orders
             </Link>
           </li>
           <li className="mb-1">
