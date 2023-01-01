@@ -17,7 +17,7 @@ const MyReview = () => {
       description,
     };
 
-    fetch("https://limitless-mountain-39246.herokuapp.com/reviews", {
+    fetch("https://food-delivery-20mn.onrender.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

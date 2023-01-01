@@ -6,15 +6,12 @@ const UserRow = ({ user, index, refetch }) => {
   const { email, role } = user;
 
   const makeAdmin = () => {
-    fetch(
-      `https://limitless-mountain-39246.herokuapp.com/users/admin/${email}`,
-      {
-        method: "PUT",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    )
+    fetch(`https://food-delivery-20mn.onrender.com/users/admin/${email}`, {
+      method: "PUT",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => {
         if (res.status === 403) {
           toast.error("Faild to make an admin");
@@ -30,7 +27,7 @@ const UserRow = ({ user, index, refetch }) => {
   };
 
   const handleDeleteUser = (email) => {
-    fetch(`https://limitless-mountain-39246.herokuapp.com/users/${email}`, {
+    fetch(`https://food-delivery-20mn.onrender.com/users/${email}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

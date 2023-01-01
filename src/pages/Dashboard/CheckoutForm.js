@@ -13,7 +13,7 @@ const CheckoutForm = ({ orders }) => {
   const { _id, price, userEmail, name } = orders;
 
   useEffect(() => {
-    fetch("https://limitless-mountain-39246.herokuapp.com/create-payment-intent", {
+    fetch("https://food-delivery-20mn.onrender.com/create-payment-intent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -75,8 +75,8 @@ const CheckoutForm = ({ orders }) => {
       const payments = {
         orders: _id,
         transctionId: paymentIntent.id,
-      }
-      fetch(`https://limitless-mountain-39246.herokuapp.com/orders/${_id}`, {
+      };
+      fetch(`https://food-delivery-20mn.onrender.com/orders/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

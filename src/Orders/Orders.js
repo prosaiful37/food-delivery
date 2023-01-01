@@ -13,7 +13,7 @@ const Orders = () => {
   const [quentity, setQuentity] = useState(1);
   const [order, setOrder] = useState({});
   useEffect(() => {
-    const url = `https://limitless-mountain-39246.herokuapp.com/products/${ordersId}`;
+    const url = `https://food-delivery-20mn.onrender.com/products/${ordersId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrder(data));
@@ -56,7 +56,7 @@ const Orders = () => {
       userEmail,
     };
 
-    fetch("https://limitless-mountain-39246.herokuapp.com/orders/", {
+    fetch("https://food-delivery-20mn.onrender.com/orders/", {
       method: "POST",
       headers: {
         "content-type": "application/json",

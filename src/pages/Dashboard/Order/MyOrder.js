@@ -12,7 +12,7 @@ const UserOrder = () => {
   useEffect(() => {
     if (user) {
       fetch(
-        `https://limitless-mountain-39246.herokuapp.com/orders?userEmail=${user.email}`,
+        `https://food-delivery-20mn.onrender.com/orders?userEmail=${user.email}`,
         {
           method: "GET",
           headers: {
@@ -37,7 +37,7 @@ const UserOrder = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      const url = `https://limitless-mountain-39246.herokuapp.com/orders/${id}`;
+      const url = `https://food-delivery-20mn.onrender.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
         headers: {

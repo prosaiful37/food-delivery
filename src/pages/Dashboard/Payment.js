@@ -13,7 +13,7 @@ const stripePromise = loadStripe(
 const Payment = () => {
   const { id } = useParams();
 
-  const url = `https://limitless-mountain-39246.herokuapp.com/orders/${id}`;
+  const url = `https://food-delivery-20mn.onrender.com/orders/${id}`;
   const {
     data: orders,
     isLoading,

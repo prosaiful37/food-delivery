@@ -12,7 +12,7 @@ import menu8 from "../../Images/menuimage/8.jpg";
 const Menu = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://limitless-mountain-39246.herokuapp.com/products")
+    fetch("https://food-delivery-20mn.onrender.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
